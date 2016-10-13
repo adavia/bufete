@@ -1,0 +1,6 @@
+= simple_form_for @user do |f|
+  = f.input :username, label: false, placeholder: "Usuario"
+  = f.input :email, label: false, placeholder: "Correo electrónico"
+  = f.input :password, label: false, placeholder: "Contraseña"
+  = f.input :password_confirmation, label: false, placeholder: "Confirmación de contraseña"
+  = f.button :submit, "Crear nueva cuenta", class: "btn-block btn-primary"

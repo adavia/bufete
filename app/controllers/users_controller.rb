@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        log_in @user
         format.html { redirect_to root_url,
           flash: { success: "Tu cuenta has sido creada exitosamente."}}
         format.json { render json: @user,
