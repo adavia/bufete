@@ -1,9 +1,10 @@
 .row
   .col-md-6.offset-md-3.m-t-3
-    %h1.text-uppercase.text-xs-center Inicio de sesión
-    = render "layouts/shared/alert_messages"
-    .user-signin-form
-      = simple_form_for :session, { url: sign_in_path } do |f|
-        = f.input :username, placeholder: "Usuario"
-        = f.input :password, placeholder: "Contraseña"
-        = f.button :submit, "Ingresar", class: "btn-block btn-primary"
+    .shadow-box
+      %h1.text-xs-center Inicio de sesión
+      = render "layouts/shared/alert_messages"
+      .user-signin-form
+        = simple_form_for :session, { url: sign_in_path } do |f|
+          = f.input :username, label: false, placeholder: "Usuario"
+          = f.input :password, label: false, placeholder: "Contraseña"
+          = f.button :submit, "Ingresar", class: "btn-block btn-primary"
