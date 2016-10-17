@@ -1,0 +1,14 @@
+%nav.navbar.navbar-light.bg-faded
+  = link_to "Bufete Adm. Corporativa", companies_path, class: "navbar-brand"
+
+  %form.form-inline.pull-left
+    %input.form-control{placeholder: "Buscar", type: "text"}
+    %button.btn.btn-outline-success{type: "submit"} Buscar
+
+  %ul.nav.navbar-nav.pull-right
+    - if logged_in?
+      %a.nav-item.nav-link.active.text-muted
+        = fa_icon("user", text: current_user.email)
+      %li.nav-item.active
+        = link_to "Cerrar sesión", sign_out_path, method: :delete, class: "nav-link"
+        %span.sr-only (current)

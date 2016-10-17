@@ -1,0 +1,5 @@
+.row
+  .col-md-6.offset-md-3.m-t-3
+    - @companies.each do |company|
+      .card.card-block
+        %h3.card-title= company.name

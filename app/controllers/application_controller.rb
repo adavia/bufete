@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     unless logged_in?
       store_location
       redirect_to root_url
-      flash[:info] = "You must be logged in to access."
+      flash[:info] = "Debe iniciar sesión para poder acceder al sistema."
     end
   end
 end

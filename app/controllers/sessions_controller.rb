@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_back_or root_url
+      redirect_back_or companies_url
     else
       flash.now[:danger] = "Sus credenciales no son válidas. Intente nuevamente."
       render :new

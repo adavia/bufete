@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     delete "sign_out" => :destroy
   end
 
+  resources :companies do
+    resources :clients
+  end
+
   resources :users, only: [:new, :create]
 end
