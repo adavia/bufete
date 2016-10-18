@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :clients
   end
 
+  resources :employees
+
   resources :users, only: [:new, :create]
 end

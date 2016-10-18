@@ -17,7 +17,7 @@
       'data-turbolinks-track': 'reload'
 
   %body{class: page_class}
-    - unless page_class == "sessions new"
+    - unless page_class == "sessions new" or page_class == "sessions create"
       = render "layouts/shared/nav_bar"
-    .container
+    .container-fluid
       = yield

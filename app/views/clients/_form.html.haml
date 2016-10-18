@@ -1,0 +1,5 @@
+= simple_form_for [@company, Client.new] do |f|
+  = f.input :name, label: false, placeholder: "Nombre"
+  = f.input :responsible, label: false, placeholder: "Responsable"
+  = f.input :description, label: false, placeholder: "Descripción"
+  = f.button :submit, "Crear nuevo cliente", class: "btn-block btn-primary"

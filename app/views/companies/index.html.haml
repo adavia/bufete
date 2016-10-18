@@ -1,5 +1,6 @@
 .row
-  .col-md-6.offset-md-3.m-t-3
+  .col-md-6.offset-md-3.m-t-2
     - @companies.each do |company|
       .card.card-block
-        %h3.card-title= company.name
+        %h2.card-title
+          = link_to company.name, company

@@ -2,21 +2,16 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "users";
+@import "employees";
 
 h1, h2 {
   font-family: "Amatic SC", cursive;
   text-transform: uppercase;
 }
 
-nav {
-  form {
-    margin-top: 3px;
-  }
-}
-
 .navbar-brand {
   font-family: "Amatic SC", cursive;
-  font-size: 30px !important;
+  font-size: 25px !important;
   text-transform: uppercase;
   margin-right: 2rem;
 }
