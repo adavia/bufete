@@ -1,6 +1,8 @@
 .row
   .col-md-6.offset-md-3.m-t-2
+    = link_to "Ingresar nueva empresa", [:new, :company],
+      class: "btn btn-outline-primary btn-block m-t-2"
     - @companies.each do |company|
-      .card.card-block
+      .card.card-block.m-t-2
         %h2.card-title
           = link_to company.name, company
