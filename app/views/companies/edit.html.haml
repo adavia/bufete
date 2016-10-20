@@ -1,5 +1,10 @@
-.row
-  .col-md-6.offset-md-3
-    %h2.text-muted.text-xs-center.m-t-3 Editar datos de la empresa
+%h1.m-t-2.text-xs-center= @company.name
 
+.row
+  .col-md-3
+    .list-group
+      = render @company.clients
+
+  .col-md-6
+    %h2.text-muted.text-xs-center Editar datos de la empresa
     = render "form"

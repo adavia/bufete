@@ -1,5 +1,6 @@
 .row
   .col-md-6.offset-md-3.m-t-2
+    = render "layouts/shared/alert_messages"
     = link_to "Ingresar nueva empresa", [:new, :company],
       class: "btn btn-outline-primary btn-block m-t-2"
     - @companies.each do |company|

@@ -9,9 +9,34 @@ h1, h2 {
   text-transform: uppercase;
 }
 
+nav {
+  border-bottom: 1px solid #e7e7e7;
+}
+
 .navbar-brand {
   font-family: "Amatic SC", cursive;
   font-size: 25px !important;
   text-transform: uppercase;
   margin-right: 2rem;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+  }
 }

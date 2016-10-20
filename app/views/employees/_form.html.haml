@@ -1,0 +1,7 @@
+= simple_form_for [@client, @employee] do |f|
+  = f.input :name, label: false, placeholder: "Nombre"
+  = f.input :last_name, label: false, placeholder: "Apellido"
+  = f.input :ife, label: false, placeholder: "IFE"
+  = f.simple_fields_for :attachments, Attachment.new do |ff|
+    = render "attachments/form", f: ff
+  = f.button :submit, "Guardar expediente", class: "btn-block btn-primary"

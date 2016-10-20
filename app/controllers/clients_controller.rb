@@ -42,13 +42,13 @@ class ClientsController < ApplicationController
           flash: { success: "El cliente ha sido editado exitosamente."}}
         format.js   {}
         format.json {
-          render json: @post, status: :created, location: @post
+          render json: @client, status: :created, location: @client
         }
       else
         format.html { render 'edit' }
         format.js   {}
         format.json {
-          render json: @post.errors, status: :unprocessable_entity
+          render json: @client.errors, status: :unprocessable_entity
         }
       end
     end

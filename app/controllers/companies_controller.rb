@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :authorized_user
-  before_action :set_company, only: [:show, :edit, :update]
+  before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   def index
     @companies = Company.all
@@ -48,6 +48,16 @@ class CompaniesController < ApplicationController
           render json: @company.errors, status: :unprocessable_entity
         }
       end
+    end
+  end
+
+  def destroy
+    @company.destroy
+
+    respond_to do |format|
+      format.html { redirect_to companies_url,
+          flash: { success: "La empresa ha sido eliminada exitosamente."}}
+      format.js {}
     end
   end
 

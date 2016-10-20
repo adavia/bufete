@@ -21,6 +21,8 @@ source 'https://rails-assets.org' do
 end
 # Use simple form
 gem 'simple_form'
+# Add File Uploading
+gem 'carrierwave', '~> 0.10.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

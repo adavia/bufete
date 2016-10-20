@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018144352) do
+ActiveRecord::Schema.define(version: 20161020203947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
+    t.string   "file"
+    t.integer  "employee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["employee_id"], name: "index_attachments_on_employee_id", using: :btree
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +60,7 @@ ActiveRecord::Schema.define(version: 20161018144352) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
+  add_foreign_key "attachments", "employees"
   add_foreign_key "clients", "companies"
   add_foreign_key "employees", "clients"
 end

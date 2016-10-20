@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :is_logged_in, only: [:new, :create]
+
   def new
   end
 
@@ -17,5 +19,13 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url,
       flash: { success: "Hasta luego!" }
+  end
+
+  private
+
+  def is_logged_in
+    if logged_in?
+      redirect_to companies_url
+    end
   end
 end

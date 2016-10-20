@@ -3,3 +3,4 @@
     = employee
     %small.text-muted
       IFE #{employee.ife}
+      = link_to fa_icon("pencil"), [:edit, employee.client, employee]

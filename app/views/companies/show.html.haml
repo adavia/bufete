@@ -11,4 +11,6 @@
       class: "btn btn-outline-primary btn-block m-t-2"
     = link_to "Ingresar nuevo cliente", [:new, @company, :client],
       class: "btn btn-outline-primary btn-block"
+    = link_to "Eliminar empresa", @company, method: :delete,
+      class: "btn btn-outline-danger btn-block"
 

@@ -1,0 +1,16 @@
+%h1.m-t-2.text-xs-center
+  = @client.company.name
+  %small.text-muted
+    = @client.name
+    = link_to fa_icon("pencil"), [:edit, @client.company, @client]
+
+.row
+  .col-md-3
+    .list-group
+      = render @client.company.clients
+  .col-md-6
+    %h2.text-muted.text-xs-center Nuevo expediente
+    = render "form"
+
+
+
