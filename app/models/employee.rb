@@ -1,7 +1,7 @@
 class Employee < ApplicationRecord
   belongs_to :client
 
-  has_many :attachments, dependent: :destroy
+  has_many :attachments, as: :attachable, dependent: :destroy
   accepts_nested_attributes_for :attachments
 
   validates :name, presence: true

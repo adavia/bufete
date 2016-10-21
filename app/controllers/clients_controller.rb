@@ -16,6 +16,7 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
+        upload_attachments
         format.html { redirect_to [@company, @client],
           flash: { success: "El cliente ha sido creado exitosamente."}}
         format.js   {}
@@ -38,6 +39,7 @@ class ClientsController < ApplicationController
   def update
     respond_to do |format|
       if @client.update(client_params)
+        upload_attachments
         format.html { redirect_to [@company, @client],
           flash: { success: "El cliente ha sido editado exitosamente."}}
         format.js   {}
@@ -56,15 +58,24 @@ class ClientsController < ApplicationController
 
   private
 
-  def client_params
-    params.require(:client).permit(:name, :responsible, :description)
-  end
-
   def set_client
     @client = Client.find(params[:id])
   end
 
   def set_company
     @company = Company.find(params[:company_id])
+  end
+
+  def upload_attachments
+    if params[:attachments] and params[:attachments][:file]
+      params[:attachments][:file].each do |attachment|
+        @client.attachments.create!(file: attachment)
+      end
+    end
+  end
+
+  def client_params
+    params.require(:client).permit(:name, :responsible, :description,
+      attachments_attributes: [:file])
   end
 end

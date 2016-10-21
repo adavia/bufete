@@ -39,6 +39,7 @@ class EmployeesController < ApplicationController
   def update
     respond_to do |format|
       if @employee.update(employee_params)
+        upload_attachments
         format.html { redirect_to [@client.company, @client],
           flash: { success: "El expediente ha sido editado exitosamente."}}
         format.js   {}
@@ -57,10 +58,6 @@ class EmployeesController < ApplicationController
 
   private
 
-  def employee_params
-    params.require(:employee).permit(:name, :last_name, :ife)
-  end
-
   def set_employee
     @employee = Employee.find(params[:id])
   end
@@ -70,12 +67,15 @@ class EmployeesController < ApplicationController
   end
 
   def upload_attachments
-    attachments = params[:attachments][:file].reject(&:blank?)
-
-    if attachments
-      attachments.each do |attachment|
+    if params[:attachments] and params[:attachments][:file]
+      params[:attachments][:file].each do |attachment|
         @employee.attachments.create!(file: attachment)
       end
     end
+  end
+
+  def employee_params
+    params.require(:employee).permit(:name, :last_name, :ife,
+      attachments_attributes: [:file])
   end
 end

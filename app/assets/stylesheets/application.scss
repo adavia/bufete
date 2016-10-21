@@ -40,3 +40,8 @@ nav {
     display: block;
   }
 }
+
+.file-text {
+  @extend .text-muted;
+  margin-left: 10px;
+}

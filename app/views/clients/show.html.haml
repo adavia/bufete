@@ -15,5 +15,11 @@
       class: "btn btn-outline-primary btn-block m-t-1"
     = render @client.employees
 
+  .col-md-3
+    .list-group
+      .li.list-group-item.active
+        Documentación
+      = render @client.attachments
+
 
 

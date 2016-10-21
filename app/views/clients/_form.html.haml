@@ -2,4 +2,6 @@
   = f.input :name, label: false, placeholder: "Nombre"
   = f.input :responsible, label: false, placeholder: "Responsable"
   = f.input :description, label: false, placeholder: "Descripción"
+  = f.simple_fields_for :attachments, Attachment.new do |ff|
+    = render "attachments/form", f: ff
   = f.button :submit, "Guardar datos", class: "btn-block btn-primary"
