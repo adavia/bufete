@@ -1,0 +1,17 @@
+%h1.m-t-2.text-xs-center
+  = @employee.name
+  %small.text-muted
+    = link_to fa_icon("pencil"), [:edit, @employee.client, @employee]
+
+.row
+  .col-md-6
+    %h2.text-muted.text-xs-center Información General
+    %p= @employee.ife
+
+  .col-md-3
+    %h2.text-muted.text-xs-center Documentación
+    .list-group
+      = render @employee.attachments
+
+
+
