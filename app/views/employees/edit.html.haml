@@ -9,5 +9,7 @@
     .list-group
       = render @client.company.clients
   .col-md-6
-    %h2.text-muted.text-xs-center Editar expediente
+    %h2.text-muted.text-xs-center
+      Editar expediente
+      %small.text-muted= @employee
     = render "form"

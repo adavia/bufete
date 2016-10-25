@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :tickets
+
   before_save do
     self.username = username.downcase
     self.email = email.downcase

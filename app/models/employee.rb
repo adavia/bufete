@@ -4,6 +4,8 @@ class Employee < ApplicationRecord
   has_many :attachments, as: :attachable, dependent: :destroy
   accepts_nested_attributes_for :attachments
 
+  has_many :tickets
+
   validates :name, presence: true
   validates :last_name, presence: true
   validates :ife, presence: true

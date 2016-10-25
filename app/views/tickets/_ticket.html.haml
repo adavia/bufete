@@ -1,0 +1,8 @@
+.dashed-list
+  %h4= ticket.name
+  .text-muted
+    Creado el
+    = l(ticket.created_at, format: :custom)
+    por
+    %strong
+      = ticket.user.username
