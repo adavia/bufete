@@ -1,24 +1,23 @@
 %h1.m-t-2.text-xs-center
   = @client.name
-  %small.text-muted
-    = @company.name
-    = link_to fa_icon("pencil"), [:edit, @company, @client]
+  = link_to fa_icon("pencil"), [:edit, @company, @client]
+%h2.m-b-1.text-muted.text-xs-center
+  = @company.name
 
 .row
-  .col-md-3
+  .col-md-5
     .list-group
       = render @company.clients
-  .col-md-6
-    %h2.text-muted.text-xs-center Expedientes
+    %h2.text-muted.text-xs-center.m-t-1 Documentación
+    .list-group
+      = render @client.attachments
+
+  .col-md-7
+    %h1.text-muted.text-xs-center Expedientes
     = render "layouts/shared/alert_messages"
     = link_to "Ingresar nuevo expediente", [:new, @client, :employee],
       class: "btn btn-outline-primary btn-block m-t-1"
     = render @client.employees
-
-  .col-md-3
-    %h2.text-muted.text-xs-center Documentación
-    .list-group
-      = render @client.attachments
 
 
 

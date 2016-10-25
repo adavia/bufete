@@ -1,0 +1,4 @@
+= simple_form_for [@employee, @ticket] do |f|
+  = f.input :name, label: false, placeholder: "Nombre"
+  = f.input :description, label: false, placeholder: "Descripción"
+  = f.button :submit, "Guardar ticket", class: "btn-block btn-primary"

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :tickets
-  resources :attachments
   root "sessions#new"
 
   controller :sessions do
@@ -17,6 +15,12 @@ Rails.application.routes.draw do
   resources :clients do
     resources :employees
   end
+
+  resources :employees do
+    resources :tickets
+  end
+
+  resources :attachments
 
   resources :users, only: [:new, :create]
 end

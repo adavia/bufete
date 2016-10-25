@@ -1,18 +1,20 @@
-.row
-  .col-md-5
-    %h1.m-t-2.text-xs-center
-      = @employee
-      %small.text-muted
-        = @employee.client.name
-        = link_to fa_icon("pencil"), [:edit, @employee.client, @employee]
+%h1.m-t-2.m-b-1.text-xs-center
+  = @employee
+  %small.text-muted
+    = @employee.client.name
+    = link_to fa_icon("pencil"), [:edit, @employee.client, @employee]
 
+.row
+  .col-md-4
+    %h1.text-xs-center Información General
     %h2.text-xs-center= @employee.ife
     %h2.text-muted.text-xs-center Documentación
     .list-group
-      = render @client.attachments
+      = render @employee.attachments
 
-  .col-md-5
-    %h1.m-t-2.text-xs-center.text-muted Tickets
+  .col-md-7
+    %h1.text-xs-center Tickets
+    %h2.text-muted.text-xs-center Últimos generados
     .list-group
       = render @employee.tickets
 

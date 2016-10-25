@@ -1,14 +1,14 @@
-%h1.m-t-2.text-xs-center= @company.name
+%h1.m-t-2.m-b-1.text-xs-center= @company.name
 
 .row
-  .col-md-3
+  .col-md-5
     .list-group
       = render @company.clients
 
   .col-md-6
     = render "layouts/shared/alert_messages"
     = link_to "Editar datos de la empresa", [:edit, @company],
-      class: "btn btn-outline-primary btn-block m-t-2"
+      class: "btn btn-outline-primary btn-block"
     = link_to "Ingresar nuevo cliente", [:new, @company, :client],
       class: "btn btn-outline-primary btn-block"
     = link_to "Eliminar empresa", @company, method: :delete,

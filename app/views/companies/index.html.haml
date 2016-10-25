@@ -1,8 +1,10 @@
+%h1.m-t-2.text-xs-center Empresas
+
 .row
-  .col-md-6.offset-md-3.m-t-2
+  .col-md-6.offset-md-3
     = render "layouts/shared/alert_messages"
     = link_to "Ingresar nueva empresa", [:new, :company],
-      class: "btn btn-outline-primary btn-block m-t-2"
+      class: "btn btn-outline-primary btn-block"
     - @companies.each do |company|
       .card.card-block.m-t-2
         %h2.card-title

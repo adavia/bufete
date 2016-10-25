@@ -3,6 +3,5 @@
   .text-muted
     Creado el
     = l(ticket.created_at, format: :custom)
-    por
-    %strong
-      = ticket.user.username
+    por:
+    = fa_icon("user", text: ticket.user.username)

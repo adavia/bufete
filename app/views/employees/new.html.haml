@@ -1,11 +1,11 @@
-%h1.m-t-2.text-xs-center
-  = @client.company.name
+%h1.m-t-2.m-b-1.text-xs-center
+  = @client.name
   %small.text-muted
-    = @client.name
+    = @client.company.name
     = link_to fa_icon("pencil"), [:edit, @client.company, @client]
 
 .row
-  .col-md-3
+  .col-md-5
     .list-group
       = render @client.company.clients
   .col-md-6

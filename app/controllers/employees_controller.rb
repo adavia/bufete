@@ -4,6 +4,7 @@ class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update]
 
   def show
+    @ticket = Ticket.new
   end
 
   def new

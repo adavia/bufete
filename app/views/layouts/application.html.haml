@@ -19,5 +19,5 @@
   %body{class: page_class}
     - if logged_in?
       = render "layouts/shared/nav_bar"
-    .container-fluid
+    .container
       = yield
