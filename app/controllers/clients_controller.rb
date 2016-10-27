@@ -3,6 +3,13 @@ class ClientsController < ApplicationController
   before_action :set_company, only: [:show, :new, :create, :edit, :update]
   before_action :set_client, only: [:show, :edit, :update]
 
+  def index
+    respond_to do |format|
+      format.html
+      format.json { @clients = Client.search(params[:term]) }
+    end
+  end
+
   def show
   end
 

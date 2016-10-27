@@ -2,8 +2,7 @@
   = link_to "Bufete Adm. Corporativa", companies_path, class: "navbar-brand"
 
   %form.form-inline.pull-left
-    %input.form-control{placeholder: "Buscar", type: "text"}
-    %button.btn.btn-outline-primary{type: "submit"} Buscar
+    %input.form-control{placeholder: "Buscar Cliente", type: "text", id: "client-search"}
 
   %ul.nav.navbar-nav.pull-right
     - if logged_in?

@@ -8,6 +8,7 @@
   .col-md-6.offset-md-3
     %h1.text-xs-center Tickets
     %h2.text-muted.text-xs-center Últimos generados
+    = render "layouts/shared/alert_messages"
     .list-group
       = render @employee.tickets
     = render "tickets/form"
