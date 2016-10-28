@@ -9,13 +9,17 @@ class Client
   search: ->
     @el.autocomplete
       source: "/clients"
+      minLength: 2
+      messages:
+        noResults: ''
+        results: ->
       create: (event, ui) =>
         @el.data('ui-autocomplete')._renderItem = (ul, item) =>
-          $( "<a>" )
+          $( "<li>" )
             .text(item.name)
-            .attr("href", item.path)
-            .append(item.label)
-            .appendTo(ul.append("<li>"))
+            .appendTo(ul)
+      select: (event, ui) =>
+        Turbolinks.visit(ui.item.path)
 
 $(document).on "turbolinks:load", ->
   client = new Client $("#client-search")
