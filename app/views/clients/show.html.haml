@@ -5,19 +5,17 @@
   = @company.name
 
 .row
-  .col-md-5
-    .list-group
-      = render @company.clients
-    %h2.text-muted.text-xs-center.m-t-1 Documentación
-    .list-group
-      = render @client.attachments
-
-  .col-md-7
+  .col-md-8
     %h1.text-muted.text-xs-center Expedientes
     = render "layouts/shared/alert_messages"
     = link_to "Ingresar nuevo expediente", [:new, @client, :employee],
       class: "btn btn-outline-primary btn-block m-t-1"
     = render @client.employees
+
+  .col-md-4
+    %h2.text-muted.text-xs-center.m-t-1 Documentación
+    .list-group
+      = render @client.attachments
 
 
 
